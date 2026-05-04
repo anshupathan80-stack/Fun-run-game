@@ -2,37 +2,44 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,width=device-width,minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="HandheldFriendly" content="true">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-
     <title>Fun Race 3D</title>
     <style>
+        /* Body aur html se saari extra jagah khatam */
         html, body {
-            background: #333333;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
+            background: #000;
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
             overflow: hidden;
         }
 
+        /* Container ko poori screen par faila diya */
         #gameContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0; /* Isse niche ki patti khatam ho jayegi */
+            right: 0;
             display: flex;
-            height: 100vh;
-            width: 100vw;
+            flex-direction: column;
         }
 
+        /* Iframe ko full space lene ke liye force kiya */
         #game-iframe {
             flex: 1;
-            border: none;
             width: 100%;
             height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Purane ad blocks ko puri tarah remove kiya */
+        .verticalAd, .horizontalAd, #div-gpt-ad-banner-bottom {
+            display: none !important;
+            height: 0 !important;
+            margin: 0 !important;
         }
     </style>
 </head>
@@ -53,66 +60,10 @@
         }
         
         if(iframe) {
-            // Game ka link set ho raha hai
             iframe.setAttribute("src", 'https://play.famobi.com/' + packageId + "/" + affiliateId);
         }
     })();
     </script>
 
 </body>
-</html>
-		max-width: 160px;
-		width: 35vh;
-	}
-
-	#div-gpt-ad-banner-top {
-		height: 10vh;
-		max-height: 100px;
-	}
-
-	#div-gpt-ad-banner-bottom {
-		height: 100px;
-	}
-
-	@media (orientation: portrait) {
-	  #div-gpt-ad-banner-left, #div-gpt-ad-banner-right, #div-gpt-ad-banner-top {
-	    display: none;
-	  }
-	}
-
-	@media (orientation: landscape) {
-	  #div-gpt-ad-banner-top, #div-gpt-ad-banner-bottom {
-	    display: none;
-	  }
-	}
-
-	@media (max-width: 1200px) and (orientation: landscape) {
-		#div-gpt-ad-banner-left {
-			display: none;
-		}
-	}
-
-	@media (max-height: 700px) and (orientation: portrait) {
-		#div-gpt-ad-banner-bottom {
-			height: 60px;
-		}
-	}
-</style>
-
-<script>
-(function(){
-	const packageId = "fun-race-3d";
-	let affiliateId = "A1000-10";
-	const iframe = document.querySelector("#game-iframe");
-	if (affiliateId == "A1000-10") {
-		affiliateId += (Math.random() >= 0.5) ? "A" : "B";
-	}
-	if(iframe) {
-		iframe.setAttribute("src", 'https://play.famobi.com/' + packageId + "/" + affiliateId);
-	}
-})();
-</script>
-
-<script src="/assets/0.2-2f727a53/js/bannerads.js"></script>
-	</body>
 </html>
